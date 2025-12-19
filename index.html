@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR LMG</title>
+    <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansation:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      .sansation-light {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.sansation-regular {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sansation-bold {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+        body {
+  font-family: 'Helvetica',"Inter", "Sansation", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #1477b8;
+}
+#view h2, #mission h2, #therapeutic h3, #challenge h2, #pais h3{
+    font-weight: 600;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #ffffff;
+  font-weight: 600;
+}
+header {
+  background-color: #fdfdfd;
+  color: rgb(10, 10, 10);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#strategy h4{
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 0;
+ color: #ffffff;
+}
+
+section{
+    padding: 0 25px;
+}
+
+.logo img{
+  width: 11em;
+  height: auto;
+  margin-left: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: rgb(10, 10, 10);
+  text-decoration: none;
+  font-weight: 500;
+}
+.menu-movil {
+  position: relative;
+  background-color: #ffffff;
+  color: #1477b8;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #1477b8;
+  cursor: pointer;
+}
+
+/* Menú oculto por defecto */
+.menu-nav {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.menu-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-nav li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.menu-nav a {
+  display: block;
+  padding: 15px 20px;
+  color: #1477b8;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.menu-nav a:hover {
+  background-color: #ffffff;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mostrar menú cuando activo */
+.menu-nav.active {
+  display: flex;
+}
+
+
+/* Sección hero */
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 70vh; /* cubre toda la pantalla */
+  background: url('https://lancomedicalgroup.com/wp-content/uploads/2025/12/bg-vade.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1476b85d; /* Un color negro con 50% de opacidad */
+  pointer-events: none; /* Para que los clics pasen a través de la capa */
+}
+/* Capa superpuesta */
+.hero-container .overlay {
+  position: absolute;
+  inset: 0;
+  background: #1476b86b; /* puedes usar un degradado si prefieres */
+  z-index: 1;
+}
+
+/* Contenido sobre la capa */
+.hero-container .content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-container h2 {
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  .hero-container p {
+    font-size: 1rem;
+  }
+}
+#view{
+  padding: 50px 0;
+}
+#view img {
+    width: 25em;
+    height: auto;
+    align-items: center;
+    margin: 0 0 0 12px;
+    background-color: #1477b8;
+}
+#view .content{
+   /* border-radius: 0 25px 25px 0;
+    background: #1e1f1ee8;*/
+    color: rgb(7, 7, 7);
+    margin: 0;
+    padding: 0 25px;
+}
+#mission, #challenge{
+  text-align: center;
+  padding: 60px 20px;
+}
+#mission img{
+  width: 25em;
+	height: 18em;
+	object-fit: cover;
+    margin: 0 0 0 -5px;
+}
+.content {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+footer {
+  background-color: #1477b8;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/*2 Columnas*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+  align-items: center;
+}
+
+.col-m {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/*Mapa*/
+.mapa-container img {
+  height: 16em;
+  width: auto;
+  margin-left: 15px;
+}
+.container-pais{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(223, 223, 223, 0.5)),
+    url('https://lancomedicalgroup.com/wp-content/uploads/2023/09/pattern2.png') no-repeat center center;
+    background-size: cover;
+    padding: 60px 0;
+    min-width: 100vw;
+}
+
+#mapa h3{
+    font-size: 1.4em;
+    margin: 0;
+    text-align: center;
+    padding: 0 0 10px 0;
+}
+#pais .contenido {
+    margin: 0 0 0 -20px;
+    padding: 0 30px;
+    text-align: center; 
+}
+.container-strategy{
+  text-align: center;
+  background: linear-gradient(#643489, #724191),
+              url('https://lancomedicalgroup.com/wp-content/uploads/2023/09/pexels-rodnae-productions-7821713.jpg') center/cover no-repeat;
+  color: white;
+  padding: 60px 20px;
+}
+
+#oppurtunites{
+  background-color: #f4983e;
+  padding: 50px 0;
+  color: white;
+}
+#oppurtunites h3{
+  color: #ffffff;
+}
+
+#strategy p, #oppurtunites h3, #together h3{
+  font-size: 2.2em;
+  line-height: 1;
+  font-weight: 600;
+  margin-top: 20px;
+}
+#percent{
+    background-color: #ffffff;
+    padding: 30px;
+    justify-items: center;
+}
+#percent .leyenda img{
+    height: 6em;
+}
+#together{
+  text-align: center;
+  background: linear-gradient(#643489, #724191);
+  color: #ffffff;
+  padding: 60px 0;
+}
+
+/* Slider therapeutic */
+.container-therapeutic {
+  padding: 40px 25px;
+  background-color: #f9f9f9;
+}
+
+.slider-terapeutico {
+  padding: 20px;
+  background-color: #f0f8ff;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 340px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 70%;
+  max-width: 70%;
+  background: white;
+  margin: 0 10px;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
+}
+
+.slide .icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+}
+
+.slide p {
+  margin-top: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Flechas */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.nav.prev { left: 5px; }
+.nav.next { right: 5px; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .slide {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+}
+
+
+/* Puntos */
+.dots {
+  margin-top: 20px;
+}
+
+.dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots .active {
+  background-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 100%;
+  }
+}
+.container-therapeutic {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* seccion contacto */
+.contact-section {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1588776814546-ec7e4c1b9c3f') center/cover no-repeat;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.contact-section .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+  z-index: 1;
+}
+
+/* Contenedor doble */
+.contact-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Formulario */
+.formulario {
+  flex: 1 1 500px;
+  margin-top: -40px;
+  padding: 0 20px 0 0;
+}
+
+.formulario h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.formulario p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #1477b8;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1477b8;
+}
+
+/** FIN DE HOME */
+.iconos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+.lineas img, .banderas .iconos img{
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.logo-footer img{
+    width: 30%;
+    height: auto;
+}
+.banderas{
+  border-bottom: #ccc 1px solid;
+}
+    </style>
+</head>
+<body>
+    <header class="menu-movil">
+    <div class="logo"><img src="https://lancomedicalgroup.com/wp-content/uploads/2023/09/lancomedical-group11.png" alt="lancomedical-group" srcset=""></div>
+     <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#view">Visión</a></li>
+        <li><a href="plantilla-proctos.html">Productos</a></li>
+        <li><a href="line.html">Líneas</a></li>
+      </ul>
+    </nav>
+  </header>
+    <section id="hero" class="hero-container">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Amplíe su alcance internacional con<br> Lanco Medica Group</h1>
+			<span></span>
+			<p>Juntos, sí hacemos salud</p>
+		</div>	
+    </section>
+    <!-- eliminar el gris del texto de la vision, cambiar de posicion la img de mission
+
+Aseguramiento de la calidad
+Líneas terapéuticas(colocar carrusel)
+
+Banderas
+
+Panamá
+El Salvador
+Honduras
+Costa Rica
+México
+
+    -->
+    <section id="view" class="col-2 container container-vision">
+        <div id="" class="col-m content">
+            <h2>Visión</h2>
+            <p>
+                Aumentando tu alcance y éxito <br>
+                Concebido como el socio estimado de los líderes del sector farmacéutico, nuestra misión es establecer el reconocimiento como la principal opción para expandir su influencia y sus logros en el panorama dinámico de América Latina.
+                En Lanco Medical Group, nuestro compromiso es desempeñar un papel fundamental en el fomento del crecimiento sostenible de su organización. Al ofrecer terapias de vanguardia, nuestro objetivo es hacer contribuciones sustanciales a quienes las necesitan, 
+                alineándonos con las metas y objetivos generales de su empresa.
+            </p>
+        </div>
+        <div class="col-m image">
+            <img src="https://lancomedicalgroup.com/wp-content/uploads/2025/04/abstract-glowing-polygonal-business-graph-hologram-with-growing-arrow-blurry-blue-city-background-financial-growth-market-trade-concept-double-exposure.webp" alt="Imagen representativa">
+        </div>
+    </section>
+    <section id="mission" class="col-2 container container-mission">
+        <div class="container">
+        <div id="" class="col-m">
+            <h2>Misión</h2>
+            <p>
+                Tu éxito es nuestro objetivo
+                <br>
+                Nuestra misión dedicada es allanar el camino hacia el éxito de las multinacionales farmacéuticas en el territorio de América Latina.
+                Estamos comprometidos a crear oportunidades de crecimiento y desbloquear caminos en mercados complejos. Su éxito es nuestro objetivo primordial y trabajamos diligentemente para garantizar que pueda aprovechar plenamente el vasto potencial inherente a esta región dinámica.
+            </p>
+        </div>
+        <div class="col-m image">
+        		<img src="https://lancomedicalgroup.com/wp-content/uploads/2025/04/businessman-holding-modern-virtual-digital-globe-his-hand-concept-great-potentail-handling-things-business-information.webp" alt="Imagen representativa">
+        	</div>
+        </div>        
+    </section>
+    <section id="strategy" class="container-strategy">
+        <div id="" class="content">
+            <h4>Nuestra estrategia</h4>
+    		    <p>Amplíe su alcance internacional
+              con Lanco Medical Group</p>
+        </div>
+    </section>
+
+<!--	<section id="percent" class="col-2 container-percent">
+        <div class="container">
+            <div class="col-m leyenda">
+            	<h2>Why Mexico, Central America and Dominican Republic</h2>
+         			<ul>
+			    		<li style="text-align: justify;">– Penetration in a market of <strong>4.6 Billion USD</strong>.
+			    		</li>
+			    		<li style="text-align: justify;">– Size compared to the <strong>Colombian market</strong>, but with better growth in units and values.
+			    		</li>
+			    		<li style="text-align: justify;">– If we include México we would be penetrating a market of <strong>15.3 Billion.</strong>
+			    		</li>
+		    		</ul>
+                	<div class="h2">
+		            	<h2>Legend</h2>
+	            	</div>
+				<img src="https://lancomedicalgroup.com/wp-content/uploads/2023/10/legend1.png" alt="" srcset="">
+        	</div>
+        	<div id="" class="col-m image">
+            	<img src="https://lancomedicalgroup.com/wp-content/uploads/2023/10/tablas-lanco-medical-group-1536x864.png" alt="" srcset="">
+        	</div>
+        </div>        
+    </section> -->
+
+    <section id="pais" class="col-2 container container-pais">
+        <div class="container">
+        <div id="mapa" class="col-m mapa-america">
+            <h3>Mercado ético (millones) USD</h3>
+            <div class="mapa-container">
+				<img src="https://lancomedicalgroup.com/wp-content/uploads/2023/10/mapa-movil-lanco-840x562.jpg" alt="Mapa América">
+            </div>
+        </div>
+        <div class="col-m contenido">
+                <h3>¿Por qué lo hacemos?</h3>
+                <p>Nuestra dedicación inquebrantable radica en desmantelar las barreras que 
+                  encuentran las compañías farmacéuticas que buscan ingresar a mercados diversos 
+                  y complejos. Muy en sintonía con las idiosincrasias de la industria, 
+                  hemos desarrollado meticulosamente una plataforma regional diseñada para 
+                  agilizar los procesos. Nuestra motivación se basa en impulsar la innovación más 
+                  allá de las fronteras, permitiéndole concentrarse en perfeccionar su experiencia 
+                  y exhibir sus productos sin obstáculos.
+                </p>
+        </div>
+    </div>
+    </section>
+ <!--   <section id="oppurtunites" class="container-oppurtunites">
+        <div id="" class="content">
+            <h3>Opportunities Without Complexity</h3>
+            <p>
+                We meticulously manage the operational and regulatory intricacies, liberating 
+                your focus to excel in what you do best: innovate. Our approach is designed to 
+                guarantee a seamless avenue for advancing therapies to a broader patient base within the region, 
+                perfectly aligned with your overarching vision and mission.
+            </p>
+        </div>
+    </section>-->
+    <section id="challenge" class="col-2 container container-challenge">
+        <div class="container">
+        <div id="" class="col-m">
+            <h2>El reto</h2>
+            <p>
+                Reconociendo los desafíos predominantes que impiden la introducción de terapias 
+                innovadoras en nuestra región, nos hemos fijado un objetivo clave: inspirar a la 
+                industria a superar estos obstáculos y hacer que estos productos innovadores sean 
+                accesibles en América Latina. Posicionados como catalizadores de la innovación, 
+                nuestra función es impulsar un cambio transformador que tenga el potencial de tener 
+                un impacto significativo en las vidas de nuestra región.
+            </p>
+        </div>
+        <div class="col-m image">
+            <img src="https://lancomedicalgroup.com/wp-content/uploads/2025/04/lanco-medical-group1-quienes-somos.webp" alt="Imagen representativa">
+        </div>
+        </div>
+    </section>
+    <section id="therapeutic" class="container-therapeutic">
+        <div id="" class="">
+            <h3>Líneas terapéuticas</h3>
+        </div>
+	<!--	<div class="slider-wrapper">
+    <button class="nav prev">&#10094;</button>
+    <div class="slider-track">
+      <div class="slide"><span class="icon">💊</span><p>Pain</p></div>
+      <div class="slide"><span class="icon">🧬</span><p>VIH</p></div>
+      <div class="slide"><span class="icon">🍽️</span><p>Metabolism & Digestive</p></div>
+      <div class="slide"><span class="icon">🧠</span><p>Central Nervous System</p></div>
+      <div class="slide"><span class="icon">🩸</span><p>Hematology</p></div>
+      <div class="slide"><span class="icon">🌬️</span><p>Respiratory System</p></div>
+      <div class="slide"><span class="icon">❤️</span><p>Cardiology</p></div>
+      <div class="slide"><span class="icon">🧴</span><p>Corticosteroids</p></div>
+      <div class="slide"><span class="icon">🛡️</span><p>Anti-infective</p></div>
+      <div class="slide"><span class="icon">🎗️</span><p>Cancer</p></div>
+      <div class="slide"><span class="icon">🔬</span><p>Immunotherapy</p></div>
+      <div class="slide"><span class="icon">🧫</span><p>Immunosuppression & Transplant</p></div>
+    </div>
+    <button class="nav next">&#10095;</button>
+  </div> -->
+        <div class="iconos">
+          <div class="lineas">
+            <img src="ICONOS/CARDIOLOGÍA.png" alt="" srcset="">
+            <span>CARDIOLOGÍA</span>
+          </div>
+          <div class="lineas">
+            <img src="ICONOS/cÁncer.png" alt="" srcset="">
+            <span>CANCER</span>
+          </div>
+          <div class="lineas">
+            <img src="ICONOS/ANTIINFECCIOSA.png" alt="" srcset="">
+            <span>ANTINFECCIOSOS</span>
+          </div>
+          <div class="lineas">
+            <img src="ICONOS/SISTEMA RESPIRATORIO.png" alt="" srcset="">
+            <span>SISTEMA RESPIRATORIO</span>
+            </div>
+          <div class="lineas">
+            <img src="ICONOS/DOLOR.png" alt="" srcset="">
+            <span>DOLOR</span>
+          </div>
+          <div class="lineas">
+            <img src="ICONOS/SISTEMA NERVIOSO CENTRAL.png" alt="" srcset="">
+            <span>SISTEMA NERVIOSO CENTRAL</span>
+          </div>
+          <div class="lineas">
+            <img src="ICONOS/METABOLISMO Y DIGESTIVO.png" alt="" srcset="">
+            <span>METABOLISMO Y DIGESTIVO</span>
+          </div>
+        </div>
+
+  <div class="dots"></div>
+
+    </section>
+    <section id="oppurtunites" class="container-oppurtunites">
+        <div id="" class="content">
+            <h3>Juntos, Sí hacemos salud</h3>
+            <p>
+                En nuestros esfuerzos de colaboración, las fronteras dejan de ser obstáculos; 
+                en cambio, se transforman en oportunidades para extender las terapias avanzadas 
+                a una audiencia más amplia. Confíe en Lanco Medical Group como su socio estratégico 
+                en América Latina y permítanos facilitarle la expansión de su presencia en una 
+                región llena de potencial y posibilidades.
+            </p>
+        </div>
+    </section>
+   <!-- <section id="together" class="container container-together">
+        <div id="" class="content">
+            <h3>Together, We Do Health</h3>
+            <p>
+                In our collaborative efforts, borders cease to be obstacles; instead, 
+                they transform into opportunities to extend advanced therapies to a 
+                broader audience. Place your trust in Lanco Medical Group as your 
+                strategic partner in Latin America, and allow us to facilitate the 
+                expansion of your presence in a region teeming with potential and 
+                possibilities.
+            </p>
+        </div>
+    </section>
+     <section id="contact" class="col-2 contact-section">
+        <div class="overlay"></div>
+  <div class="contact-container">
+    <div class="formulario">
+      <h2>Contáctanos</h2>
+      <p>Para más información, completa el siguiente formulario</p>
+      <form action="mailto:info@mipagina.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="mail" placeholder="Correo electrónico" required>
+        <input type="tel" name="phone" placeholder="Teléfono" required>
+        <textarea name="details" placeholder="Detalles adicionales" rows="5"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+   <!-- <div class="imagen-animada">
+      <img src="https://lancomedicalgroup.com/wp-content/uploads/2025/04/global-communications-map-binary-smart-phones-globe-connections.webp" alt="Imagen ilustrativa">
+      <div class="onda"></div>
+    </div>-->
+ <!--  </div>
+    </section>-->
+    
+    <footer>
+    <!-- agregar banderas -->
+     <div class="banderas">
+      <div class="logo-footer">
+        <img src="https://lancomedicalgroup.com/wp-content/uploads/2023/09/lanco-medical-group2-1.png" alt="Logo Lanco Medical Group" srcset="">
+      </div>
+      <div class="iconos">
+            <img src="https://lancomedicalgroup.com/wp-content/uploads/2022/04/banderas-18.png" alt="bandera de panama" srcset="">
+          
+            <img src="https://lancomedicalgroup.com/wp-content/uploads/2022/04/banderas-17.png" alt="bandera de El Salvador" srcset="">
+          
+            <img src="https://lancomedicalgroup.com/wp-content/uploads/2022/04/honduras-17.png" alt="bandera de honduras" srcset="">
+          
+            <img src="https://lancomedicalgroup.com/wp-content/uploads/2022/04/costa-rica-17.png" alt="bandera de costa rica" srcset="">
+            <div>
+              <img src="https://lancomedicalgroup.com/wp-content/uploads/2022/04/banderas-16.png" alt="bandera de Mexico" srcset="">
+              
+            </div>
+          
+     </div>
+      </div>
+        <p>&copy; 2025 Lanco Medical Group. Todos los derechos reservados.</p>
+    </footer>
+	<script>
+    // Menú móvil
+const toggleBtn = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.menu-nav');
+
+toggleBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+  </script>
+</body>
+</html>

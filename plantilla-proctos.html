@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Productos</title>
+  <link rel="stylesheet" href="" />
+    <style>
+        /* Reset básico */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+header {
+  background-color: #fdfdfd;
+  color: rgb(10, 10, 10);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img{
+  width: 11em;
+  height: auto;
+  margin-left: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: rgb(10, 10, 10);
+  text-decoration: none;
+  font-weight: 500;
+}
+.menu-movil {
+  position: relative;
+  background-color: #ffffff;
+  color: #0077cc;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #0077cc;
+  cursor: pointer;
+}
+
+/* Menú oculto por defecto */
+.menu-nav {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.menu-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-nav li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.menu-nav a {
+  display: block;
+  padding: 15px 20px;
+  color: #0077cc;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.menu-nav a:hover {
+  background-color: #ffffff;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mostrar menú cuando activo */
+.menu-nav.active {
+  display: flex;
+}
+/** Fin menú móvil */
+
+/* Portada con diagonales */
+.portada {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background-color: #0400ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fondo-diagonal {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  transform: skewY(-10deg);
+  z-index: 1;
+}
+
+.diagonal-1 {
+  top: 0;
+  background: url('fondo1.jpg') center/cover no-repeat;
+}
+
+.diagonal-2 {
+  top: 150px;
+  background: url('fondo2.jpg') center/cover no-repeat;
+}
+
+.texto-portada {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.texto-portada h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.texto-portada h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+
+/* Productos */
+/* Sección del producto con fondo sólido y curva */
+.producto {
+  position: relative;
+  background-color: #ffffffe8; /* Parte superior: blanco */
+  padding: 60px 20px 100px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  flex: 1 1 300px;
+  overflow: hidden;
+  z-index: 6;
+}
+
+/* Curva azul en el centro */
+.producto::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0077cc; /* Parte inferior: azul */
+  clip-path: ellipse(100% 0 at 50% 0); /* curva suave desde el centro hacia abajo */
+  z-index: 0;
+}
+
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+  justify-content: center;
+  background-color: #0077ccb6;
+}
+/*
+.producto {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  flex: 1 1 300px;
+  padding: 20px;
+}
+
+/* Info principal */
+.info-principal {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contenido-producto .imagen{
+  height: 5em;
+  background-color: blueviolet;
+}
+.logo-producto{
+  display: block;
+  width: 8em;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.linea-terapeutica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  gap: 8px;
+}
+
+.nombre-linea {
+  background-color: #ffe0e0;
+  padding: 0 .35em 0 .35em;
+  border-radius: 12px;
+}
+
+.linea-terapeutica .icono {
+  font-size: 1.2rem;
+}
+
+/* Contenido producto */
+.contenido-producto {
+  padding-top: .4em;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+ /* background-color: aqua;*/
+}
+
+.imagen-producto {
+  width: 15em;
+  border-radius: 10px;
+  margin-left: -30px;
+  z-index: 1;
+}
+
+/* Especificaciones */
+.especificaciones {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+ /* background-color: #068817;*/
+  text-align: center;
+  padding: 0 20px 0 0;
+  margin-left: -50px;
+  z-index: 2;
+}
+
+.bloque {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: .4em 0;
+}
+
+.etiqueta {
+  font-weight: bold;
+  padding: 6px 12px;
+  margin-bottom: 5px;
+  color: white;
+}
+.especificaciones img{
+  width: 6em;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.etiqueta.flecha {
+  background: #0077cc;
+  padding: 6px 11px 6px 17px;
+  clip-path: polygon(0 50%, 20% 0, 100% 0, 100% 100%, 20% 100%);
+}
+
+.etiqueta.redonda {
+  background: #00aa88;
+  border-radius: 12px;
+}
+
+.bloque p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+.columna {
+  width: 40%;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .contenido-producto {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  .especificaciones {
+    width: 25%;
+    align-items: center;
+    text-align: center;
+  }
+  .imagen-producto {
+    margin-right: -20px;
+    max-width: 15em;
+    
+  }
+}
+.columna{
+  width: 45%;
+}
+.laboratorio img{
+  width: 5em;
+  height: auto;
+}
+.color-bottom {
+            background: linear-gradient(135deg, transparent 20%, #34a853 50%);
+            clip-path: circle(50% at 50% 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+           /* background-color: #34a853; */
+        }
+/* fin de plantilla de productos */
+
+    </style>
+</head>
+<body>
+  <header class="menu-movil">
+    <div class="logo"><img src="https://lancomedicalgroup.com/wp-content/uploads/2023/09/lancomedical-group11.png" alt="lancomedical-group" srcset=""></div>
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#view">Visión</a></li>
+        <li><a href="plantilla-proctos.html">Productos</a></li>
+        <li><a href="line.html">Líneas</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Sección de portada -->
+  <section class="portada">
+    <div class="fondo-diagonal diagonal-1"></div>
+    <div class="fondo-diagonal diagonal-2"></div>
+    <div class="texto-portada">
+      <h1>Juntos</h1>
+      <h2>Si hacemos salud</h2>
+    </div>
+  </section>
+
+  <!-- Sección de productos -->
+ <!-- <section class="productos">
+    <!-- Repetir este bloque para cada producto -->
+   <!--   <div class="producto">
+      <div class="info-principal">
+        <img src="logo-producto.png" alt="Nombre del producto" class="logo-producto">
+        <div class="linea-terapeutica cardiovascular">
+          <span class="icono">❤️</span>
+          <span class="nombre-linea">Cardiovascular</span>
+        </div>
+      </div>
+
+      <div class="contenido-producto">
+        <img src="https://calox.com/wp-content/uploads/2023/08/Atorvastatina.jpg" alt="Imagen del producto" class="imagen-producto">
+
+        <div class="especificaciones">
+          <div class="bloque laboratorio">
+            <div class="etiqueta flecha">Laboratorio</div>
+            <img src="https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png" alt="Logo del laboratorio">
+          </div>
+
+          <div class="bloque rs">
+            <div class="etiqueta redonda">RS Nro</div>
+            <p>RS-123456</p>
+          </div>
+
+          <div class="bloque principio">
+            <div class="etiqueta redonda">Principio Activo</div>
+            <p>Atorvastatina</p>
+          </div>
+
+          <div class="bloque presentacion">
+            <div class="etiqueta redonda">Presentación</div>
+            <p>Tabletas x 30 unidades</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin del producto -->
+  <!--  </section> -->
+
+  <!-- Contenedor de productos -->
+  <section class="productos"></section>
+
+  <script src="script.js"></script>
+  <script>
+    const productos = [
+  {
+    nombre: "CardioPlus",
+    logo: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    linea: "Cardiovascular",
+    icono: "❤️",
+    imagen: "https://calox.com/wp-content/uploads/2023/08/Atorvastatina.jpg",
+    laboratorio: "Lanco",
+    logoLaboratorio: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    rs: "RS-123456",
+    principio: "Atorvastatina",
+    activos: "Atorvastatina cálcica, excipientes",
+    presentacion: "Tabletas x 30 unidades"
+  },
+  {
+    nombre: "CardioPlus",
+    logo: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    linea: "Cardiovascular",
+    icono: "❤️",
+    imagen: "https://calox.com/wp-content/uploads/2023/08/Atorvastatina.jpg",
+    laboratorio: "Lanco",
+    logoLaboratorio: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    rs: "RS-123456",
+    principio: "Atorvastatina",
+    activos: "Atorvastatina cálcica, excipientes",
+    presentacion: "Tabletas x 30 unidades"
+  },
+  {
+    nombre: "CardioPlus",
+    logo: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    linea: "Cardiovascular",
+    icono: "❤️",
+    imagen: "https://calox.com/wp-content/uploads/2023/08/Atorvastatina.jpg",
+    laboratorio: "Lanco",
+    logoLaboratorio: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    rs: "RS-123456",
+    principio: "Atorvastatina",
+    activos: "Atorvastatina cálcica, excipientes",
+    presentacion: "Tabletas x 30 unidades"
+  }
+  // Puedes agregar hasta 50 productos aquí
+];
+
+const contenedor = document.querySelector('.productos');
+
+productos.forEach(prod => {
+  const html = `
+    <div class="producto">
+      <div class="encabezado">
+        <img src="${prod.logo}" alt="${prod.nombre}" class="logo-producto" />
+        <div class="linea-terapeutica">
+          <span class="icono">${prod.icono}</span>
+          <span class="nombre-linea">${prod.linea}</span>
+        </div>
+      </div>
+
+      <div class="contenido-producto">
+        <div class="columna imagen">
+          <img src="${prod.imagen}" alt="Imagen de ${prod.nombre}" class="imagen-producto" />
+        </div>
+        <div class="columna info">
+          <div class="bloque laboratorio">
+            <div class="etiqueta flecha">Laboratorio</div>
+            <img src="${prod.logoLaboratorio}" alt="Logo del laboratorio ${prod.laboratorio}" />
+          </div>
+          <div class="bloque rs">
+            <div class="etiqueta redonda">RS N°</div>
+            <p>${prod.rs}</p>
+          </div>
+          <div class="bloque principio">
+            <div class="etiqueta redonda">Principio Activo</div>
+            
+          </div>
+          <div class="bloque activos">
+            <p>${prod.activos}</p>
+          </div>
+          <div class="bloque presentacion">
+            <div class="etiqueta redonda">Presentación</div>
+            <p>${prod.presentacion}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  contenedor.insertAdjacentHTML('beforeend', html);
+});
+//fin de contenedor de productos
+
+// Menú móvil
+const toggleBtn = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.menu-nav');
+
+toggleBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+  </script>
+</body>
+</html>
