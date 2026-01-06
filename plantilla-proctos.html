@@ -5,7 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catálogo de Productos</title>
   <link rel="stylesheet" href="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansation:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
+      .sansation-light {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.sansation-regular {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sansation-bold {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
         /* Reset básico */
 body {
   margin: 0;
@@ -104,9 +125,12 @@ nav a {
 /* Portada con diagonales */
 .portada {
   position: relative;
-  height: 300px;
+  width: 100%;
+  min-height: 70vh; /* cubre toda la pantalla */
+  background: url('https://lancomedicalgroup.com/wp-content/uploads/2025/12/bg-vade.jpg') center/cover no-repeat;
+  padding: 40px 20px;
+  box-sizing: border-box;
   overflow: hidden;
-  background-color: #0400ec;
   display: flex;
   align-items: center;
   justify-content: center;
