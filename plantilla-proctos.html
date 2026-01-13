@@ -209,14 +209,14 @@ nav a {
   justify-content: center;
   background-color: #0077ccb6;
 }
-/*
+
 .producto {
   background: white;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   max-width: 400px;
   flex: 1 1 300px;
-  padding: 20px;
+  padding: 20px 10px 20px 25px;
 }
 
 /* Info principal */
@@ -225,8 +225,8 @@ nav a {
   margin-bottom: 20px;
 }
 .contenido-producto .imagen{
-  height: 5em;
-  background-color: blueviolet;
+  /*height: 5em;*/
+  margin-top: 5%;
 }
 .logo-producto{
   display: block;
@@ -235,7 +235,19 @@ nav a {
   justify-content: center;
   align-items: center;
 }
-
+/* Sistema de colores para líneas terapéuticas */
+:root {
+  /* Colores base para líneas terapéuticas */
+  --cardio-color: #e53935;
+  --neuro-color: #3949ab;
+  --anti-color: #43a047;
+  --metab-color: #ccc13a;
+  --digest-color: #f6a545;
+  --antineo-color: #8e24aa;
+  --antifu-color: #009946;
+  --antibio-color: #e3477b;
+  --corti-color: #eb6f05;
+}
 .linea-terapeutica {
   display: flex;
   align-items: center;
@@ -245,9 +257,36 @@ nav a {
   font-weight: bold;
   gap: 8px;
 }
-
+/* Variantes por línea */
+.nombre-linea.cardio {
+  background: linear-gradient(135deg, var(--cardio-color), #ef5350);
+}
+.nombre-linea.neuro {
+  background: linear-gradient(135deg, var(--neuro-color), #4aa7cc);
+}
+.nombre-linea.anti {
+  background: linear-gradient(135deg, var(--anti-color), #66bb6a);
+}
+.nombre-linea.metab {
+  background: linear-gradient(135deg, var(--metab-color), #d4d64a);
+}
+.nombre-linea.gastro {
+  background: linear-gradient(135deg, var(--digest-color), #f7b76a);
+}
+.nombre-linea.antineo {
+  background: linear-gradient(135deg, var(--antineo-color), #ab47bc);
+}
+.nombre-linea.antifu {
+  background: linear-gradient(135deg, var(--antifu-color), #33cc66);
+}
+.nombre-linea.antibio {
+  background: linear-gradient(135deg, var(--antibio-color), #ec5a7c);
+}
+.nombre-linea.corti {
+  background: linear-gradient(135deg, var(--corti-color), #ff8a50);
+}
 .nombre-linea {
-  background-color: #ffe0e0;
+  color: #ffffff;
   padding: 0 .35em 0 .35em;
   border-radius: 12px;
 }
@@ -268,9 +307,10 @@ nav a {
 }
 
 .imagen-producto {
-  width: 15em;
+  width: 13em;
   border-radius: 10px;
   margin-left: -30px;
+  padding: 0px 20px;
   z-index: 1;
 }
 
@@ -362,7 +402,12 @@ nav a {
            /* background-color: #34a853; */
         }
 /* fin de plantilla de productos */
-
+.icono-imagen {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.2));
+}
     </style>
 </head>
 <body>
@@ -436,48 +481,413 @@ nav a {
   <script>
     const productos = [
   {
-    nombre: "CardioPlus",
-    logo: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    nombre: "ANGINESS",
+    logo: "img/2.png",
     linea: "Cardiovascular",
-    icono: "❤️",
-    imagen: "https://calox.com/wp-content/uploads/2023/08/Atorvastatina.jpg",
-    laboratorio: "Lanco",
-    logoLaboratorio: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
-    rs: "RS-123456",
-    principio: "Atorvastatina",
-    activos: "Atorvastatina cálcica, excipientes",
-    presentacion: "Tabletas x 30 unidades"
+    imagen: "img/1.png",
+    laboratorio: "Emil",
+    logoLaboratorio: "img/emil.png",
+    rs: "105196",
+    activos: "Trimetazidina Clorhidrato 20 mgs",
+    presentacion: "100 tabletas recubiertas"
   },
   {
-    nombre: "CardioPlus",
-    logo: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    nombre: "CODOPRIL",
+    logo: "img/4.png",
     linea: "Cardiovascular",
-    icono: "❤️",
-    imagen: "https://calox.com/wp-content/uploads/2023/08/Atorvastatina.jpg",
+    imagen: "img/3.png",
     laboratorio: "Lanco",
-    logoLaboratorio: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
-    rs: "RS-123456",
-    principio: "Atorvastatina",
-    activos: "Atorvastatina cálcica, excipientes",
-    presentacion: "Tabletas x 30 unidades"
+    logoLaboratorio: "img/lmgbi.png",
+    rs: "115328",
+    //principio: "Atorvastatina",
+    activos: "Perindopril Arginina 5 mg",
+    presentacion: "30 tabletas revestidas <br>100 tabletas revestidas"
   },
   {
-    nombre: "CardioPlus",
-    logo: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
+    nombre: "Dioxina Kern Pharma",
+    logo: "img/6.png",
     linea: "Cardiovascular",
-    icono: "❤️",
-    imagen: "https://calox.com/wp-content/uploads/2023/08/Atorvastatina.jpg",
-    laboratorio: "Lanco",
-    logoLaboratorio: "https://calox.com/wp-content/uploads/2022/12/FIRMA-CORPORATIVA-HORZ.png",
-    rs: "RS-123456",
-    principio: "Atorvastatina",
-    activos: "Atorvastatina cálcica, excipientes",
-    presentacion: "Tabletas x 30 unidades"
+    imagen: "img/5.png",
+    laboratorio: "Kern Pharma",
+    logoLaboratorio: "img/kern.png",
+    rs: "88051",
+    activos: "Digoxina 0.25 mg",
+    presentacion: "50 comprimidos"
+  },
+  {
+    nombre: "Estaness",
+    logo: "img/8.png",
+    linea: "Cardiovascular",
+    image: "img/7.png",
+    laboratorio: "Emil",
+    logoLaboratorio: "img/emil.png",
+    rs: "115035",
+    activos: "Rosuvastatina 10 mg",
+    presentacion: "30 tabletas recubiertas <br>100 tabletas recubiertas"
+  },
+  {
+    nombre: "Femaven",
+    logo: "img/10.png",
+    linea: "Cardiovascular",
+    imagen: "img/9.png",
+    laboratorio: "kern Pharma",
+    logoLaboratorio: "img/kern.png",
+    rs: "86889",
+    activos: "Diosmina 450 mg/Hesperidina 50 mg",
+    presentacion: "30 comprimidos recubiertas"
+  },
+  {
+    nombre: "Furosemida Kern Pharma",
+    logo: "img/12.png",
+    linea: "Cardiovascular",
+    imagen: "img/11.png",
+    laboratorio: "Kern Pharma",
+    logoLaboratorio: "img/kern.png",
+    rs: "88871",
+    activos: "Furosemida 40 mg",
+    presentacion: "30 comprimidos EFG"
+  },
+  {
+    nombre: "Irbetensil",
+    logo: "img/14.png",
+    linea: "Cardiovascular",
+    imagen: "img/13.png",
+    laboratorio: "lanco",
+    logoLaboratorio: "img/lmgbi.png",
+    rs: "200406",
+    activos: "Irbesartán 300 mg",
+    presentacion: "30 tabletas revestidas"
+  },
+  {
+    nombre: "Lonapred",
+    logo: "img/16.png",
+    linea: "Cardiovascular",
+    imagen: "img/15.png",
+    laboratorio: "emil",
+    logoLaboratorio: "img/emil.png",
+    rs: "104289",
+    activos: "Amlodipina Besilato 5 mg",
+    presentacion: "30 tabletas <br>100 tabletas"
+  },
+  {
+    nombre: "Minodil",
+    logo: "img/18.png",
+    linea: "Cardiovascular",
+    imagen: "img/17.png",
+    laboratorio: "Aurochem",
+    logoLaboratorio: "img/aurochem.png",
+    rs: "95456",
+    activos: "Minoxidil 10 mg",
+    presentacion: "Caja x 100 tabletas"
+  },
+  {
+    nombre: "Tansifa",
+    logo: "img/20.png",
+    linea: "Cardiovascular",
+    imagen: "img/19.png",
+    logoLaboratorio: "img/lmgbi.png",
+    rs: "206297",
+    activos: "Candesartán cilexetilo/Amlodipino 16 mg/5 mg",
+    presentacion: "28 tabletas"
+  },
+  {
+    nombre: "Trandate inyectable",
+    logo: "img/22.png",
+    linea: "Cardiovascular",
+    imagen: "img/21.png",
+    logoLaboratorio: "img/kern.png",
+    rs: "88295",
+    activos: "Labetalol 100 mg/20 ml<br>Solución inyectable intravenosa",
+    presentacion: "5 ampollas de 20 ml"
+  },
+  {
+    nombre: "Thromban",
+    logo: "img/24.png",
+    linea: "Cardiovascular",
+    imagen: "img/23.png",
+    logoLaboratorio: "img/zydus.png",
+    rs: "Thromban 2.5 206373<br>Thromban 5 RS No.206375",
+    activos: "Apixabán 2.5 mg<br>Apixabán 5 mg",
+    presentacion: "Thromban 2.5: 30 tabletas<br>Thromban 5: 30 tabletas"
+  },
+  {
+    nombre: "Vasopril",
+    logo: "img/26.png",
+    linea: "Cardiovascular",
+    imagen: "img/25.png",
+    logoLaboratorio: "img/emil.png",
+    rs: "110265",
+    activos: "Lisinopril 20 mg",
+    presentacion: "30 tabletas<br>100 tabletas"
+  },
+  {
+    nombre: "Verical",
+    logo: "img/28.png",
+    linea: "Cardiovascular",
+    imagen: "img/27.png",
+    logoLaboratorio: "img/aurochem.png",
+    rs: "93388",
+    activos: "Dobesilato de calcio 500 mg",
+    presentacion: "30 tabletas<br>100 tabletas"
+  },
+  {
+    nombre: "Depimin",
+    logo: "img/30.png",
+    linea: "Sistema Nervioso Central",
+    imagen: "img/29.png",
+    logoLaboratorio: "img/aurochem.png",
+    rs: "95399",
+    activos: "Clorhidrato de imipramina Tabletas USP 10 mg",
+    presentacion: "100 tabletas"
+  },
+  {
+    nombre: "Epicon",
+    logo: "img/32.png",
+    linea: "Sistema Nervioso Central",
+    imagen: "img/31.png",
+    logoLaboratorio: "img/aurochem.png",
+    rs: "203182",
+    activos: "Lamotrigina 100 mg",
+    presentacion: "30 tabletas dispersables/ masticables"
+  },
+  {
+    nombre: "Escital",
+    logo: "img/34.png",
+    linea: "Sistema Nervioso Central",
+    imagen: "img/33.png",
+    logoLaboratorio: "img/pantson.png",
+    rs: "112341",
+    activos: "Escitalopram 10 mg",
+    presentacion: "30 tabletas revestidas"
+  },
+  {
+    nombre: "LMG-Triptil",
+    logo: "img/36.png",
+    linea: "Sistema Nervioso Central",
+    imagen: "img/35.png",
+    logoLaboratorio: "img/remus.png",
+    rs: "107808",
+    activos: "Amitriptilina 25 mg",
+    presentacion: "100 tabletas recubiertas"
+  },
+  {
+    nombre: "Neurogalina",
+    logo: "img/38.png",
+    linea: "Sistema Nervioso Central",
+    imagen: "img/37.png",
+    logoLaboratorio: "img/emil.png",
+    rs: "104935",
+    activos: "Gabapentina 300 mg",
+    presentacion: "100 cápsulas USP"
+  },
+  {
+    nombre: "SerLine 50",
+    logo: "img/40.png",
+    linea: "Sistema Nervioso Central",
+    imagen: "img/39.png",
+    logoLaboratorio: "img/ipca.png",
+    rs: "115522",
+    activos: "Sertralina 50 mg",
+    presentacion: "30 tabletas revestidas"
+  },
+  {
+    nombre: "Sizonil 25",
+    logo: "img/42.png",
+    linea: "Sistema Nervioso Central",
+    imagen: "img/41.png",
+    logoLaboratorio: "img/zydus.png",
+    rs: "206432",
+    activos: "Fumarato de quetiapina 25 mg",
+    presentacion: "30 tabletas"
+  },
+  {
+    nombre: "Solprex",
+    logo: "img/44.png",
+    linea: "Sistema Nervioso Central",
+    imagen: "img/43.png",
+    logoLaboratorio: "img/solton.png",
+    rs: "91087",
+    activos: "Olanzapina 10 mg",
+    presentacion: "30 tabletas recubiertas"
+  },
+  {
+    nombre: "Cefalexina",
+    logo: "img/46.png",
+    linea: "Antibiótica",
+    imagen: "img/45.png",
+    logoLaboratorio: "img/brawn.png",
+    rs: "105406",
+    activos: "Cefalexina monohidrato BP 500 mg",
+    presentacion: "30 cápsulas"
+  },
+  {
+    nombre: "Clindacin",
+    logo: "img/48.png",
+    linea: "Antibiótica",
+    imagen: "img/47.png",
+    logoLaboratorio: "img/aurochem.png",
+    rs: "90325",
+    activos: "Clindamicina clorhidrato 300 mg",
+    presentacion: "100 cápsulas<br>10 blíster"
+  },
+  {
+    nombre: "Dicloxacilina Sódica",
+    logo: "img/50.png",
+    linea: "Antibiótica",
+    imagen: "img/49.png",
+    logoLaboratorio: "img/caplin.png",
+    rs: "95060",
+    activos: "Dicloxacilina Sódica 500 mg",
+    presentacion: "100 cápsulas"
+  },
+  {
+    nombre: "Clotrimazol crema tópica 1%",
+    logo: "img/52.png",
+    linea: "Antifúngica",
+    imagen: "img/51.png",
+    logoLaboratorio: "img/caplin.png",
+    rs: "R-84523",
+    activos: "Clotrimazol 20 g",
+    presentacion: "1 tubo de 20 g"
+  },
+  {
+    nombre: "Diclofenaco gel tópico 1%",
+    logo: "img/54.png",
+    linea: "Antifúngica",
+    imagen: "img/53.png",
+    logoLaboratorio: "img/caplin.png",
+    rs: "R-86615",
+    activos: "Diclofenaco gel tópico 1%",
+    presentacion: "1 tubo de 20 g<br>1 tubo de 30 g"
+  },
+  {
+    nombre: "Ketoconazol crema 2%",
+    logo: "img/56.png",
+    linea: "Antifúngica",
+    imagen: "img/55.png",
+    logoLaboratorio: "img/caplin.png",
+    rs: "R-86793",
+    activos: "Ketoconazol 20 g",
+    presentacion: "1 tubo de 15 g"
+  },
+  {
+    nombre: "Fluconazol 150 mg cápsulas",
+    logo: "img/58.png",
+    linea: "Antifúngica",
+    imagen: "img/57.png",
+    logoLaboratorio: "img/aurobindo.png",
+    rs: "R-78072",
+    activos: "Fluconazol Ph, Eur 150 mg",
+    presentacion: "10 cápsulas"
+  },
+  {
+    nombre: "Letrozol 2,5 mg Kern Pharma",
+    logo: "img/60.png",
+    linea: "Antineoplástico",
+    imagen: "img/59.png",
+    logoLaboratorio: "img/kern.png",
+    rs: "91332",
+    activos: "Letrozol 2,5 mg",
+    presentacion: "30 comprimidos recubiertos con película"
+  },
+  {
+    nombre: "UpGluce 80",
+    logo: "img/62.png",
+    linea: "Metabólica",
+    imagen: "img/61.png",
+    logoLaboratorio: "img/aurochem.png",
+    rs: "112664",
+    activos: "Gliclacida 80 mg",
+    presentacion: "30 cápsulas"
+  },
+  {
+    nombre: "Enterflora 2B",
+    logo: "img/64.png",
+    linea: "Gastrointestinal",
+    imagen: "img/63.png",
+    logoLaboratorio: "img/lmgbi.png",
+    rs: "205294",
+    activos: "2000 millones (2 millardos) de esporas de Bacillus Clausii",
+    presentacion: "10 viales x 5 ml"
+  },
+  {
+    nombre: "Imidakid",
+    logo: "img/66.png",
+    linea: "Gastrointestinal",
+    imagen: "img/65.png",
+    logoLaboratorio: "img/aurochem.png",
+    rs: "93179",
+    activos: "Metronidazol 125 mg/ 5 ml",
+    presentacion: "Suspensión, frasco ámbar de 120 ml c/ vaso dosificador"
+  },
+  {
+    nombre: "Acetaminofén 500 mg",
+    logo: "img/68.png",
+    linea: "Antiinflamatoria",
+    imagen: "img/67.png",
+    logoLaboratorio: "img/caplin.png",
+    rs: "R-91020",
+    activos: "Acetaminofén 500 mg",
+    presentacion: "100 tabletas"
+  },
+  {
+    nombre: "Paracetamol 1%",
+    logo: "img/70.png",
+    linea: "Antiinflamatoria",
+    imagen: "img/69.png",
+    logoLaboratorio: "img/althea.png",
+    rs: "110879",
+    activos: "Paracetamol 1 g",
+    presentacion: "Solución para infusión 100 ml"
+  },
+  {
+    nombre: "Domicort",
+    logo: "img/72.png",
+    linea: "Corticosteroide",
+    imagen: "img/71.png",
+    logoLaboratorio: "img/emil.png",
+    rs: "200874",
+    activos: "Prednisolona 5 mg",
+    presentacion: "100 tabletas"
+  },
+  {
+    nombre: "Prednisolona",
+    logo: "img/74.png",
+    linea: "Corticosteroide",
+    imagen: "img/73.png",
+    logoLaboratorio: "img/brawn.png",
+    rs: "R-92697",
+    activos: "Prednisolona 5 mg",
+    presentacion: "100 tabletas"
+  },
+  {
+    nombre: "Sone",
+    logo: "img/76.png",
+    linea: "Corticosteroide",
+    imagen: "img/75.png",
+    logoLaboratorio: "img/aurochem.png",
+    rs: "112632",
+    activos: "Prednisolona 50 mg",
+    presentacion: "30 tabletas<br>100 tabletas"
   }
   // Puedes agregar hasta 50 productos aquí
 ];
 
 const contenedor = document.querySelector('.productos');
+
+// Mapeo de iconos por línea terapéutica
+const iconosLineas = {
+  'Cardiovascular': 'img/cardio.png',
+  'Sistema Nervioso Central': 'img/neuro.png',
+  'Antifúngica': 'img/antifu.png',
+  'Gastrointestinal': 'img/gastro.png',
+  'Antibióticaorio': 'img/antibio.png',
+  'Antineoplástico': 'img/antineo.png',
+  'Metabólica': 'img/metab.png',
+  'Antiinflamatoria': 'img/anti.png',
+  'Corticosteroide': 'img/corti.png',
+};
+
 
 productos.forEach(prod => {
   const html = `
@@ -485,8 +895,10 @@ productos.forEach(prod => {
       <div class="encabezado">
         <img src="${prod.logo}" alt="${prod.nombre}" class="logo-producto" />
         <div class="linea-terapeutica">
-          <span class="icono">${prod.icono}</span>
-          <span class="nombre-linea">${prod.linea}</span>
+          <span class="icono">
+    <img src="${getIconoLinea(prod.linea)}" alt="${prod.linea}" class="icono-imagen">
+  </span>
+          <span class="nombre-linea  ${getClaseLinea(prod.linea)}">${prod.linea}</span>
         </div>
       </div>
 
@@ -500,12 +912,10 @@ productos.forEach(prod => {
             <img src="${prod.logoLaboratorio}" alt="Logo del laboratorio ${prod.laboratorio}" />
           </div>
           <div class="bloque rs">
-            <div class="etiqueta redonda">RS N°</div>
-            <p>${prod.rs}</p>
+            <div class="etiqueta redonda">RS N° ${prod.rs}</div>
           </div>
           <div class="bloque principio">
             <div class="etiqueta redonda">Principio Activo</div>
-            
           </div>
           <div class="bloque activos">
             <p>${prod.activos}</p>
@@ -521,6 +931,44 @@ productos.forEach(prod => {
   contenedor.insertAdjacentHTML('beforeend', html);
 });
 //fin de contenedor de productos
+
+// Función para mapear línea a clase CSS
+function getClaseLinea(linea) {
+  const mapaLineas = {
+    'Cardiovascular': 'cardio',
+    'Sistema Nervioso Central': 'neuro',
+    'Antifúngica': 'antifu',
+  'Gastrointestinal': 'gastro',
+  'Antibióticaorio': 'antibio',
+  'Antineoplástico': 'antineo',
+  'Metabólica': 'metab',
+  'Antiinflamatoria': 'anti',
+  'Corticosteroide': 'corti',
+  };
+  
+  // Busca coincidencia exacta o parcial
+  const clave = Object.keys(mapaLineas).find(key => 
+    linea.toLowerCase().includes(key.toLowerCase())
+  );
+  
+  return mapaLineas[clave] || 'default';
+}
+
+
+// Función para obtener la ruta del icono según la línea
+function getIconoLinea(linea) {
+  const lineaLower = linea.toLowerCase();
+  
+  // Busca coincidencia exacta o parcial
+  for (const [key, value] of Object.entries(iconosLineas)) {
+    if (lineaLower.includes(key.toLowerCase())) {
+      return value;
+    }
+  }
+  
+  // Icono por defecto si no encuentra coincidencia
+  return 'iconos/default.png';
+}
 
 // Menú móvil
 const toggleBtn = document.querySelector('.menu-toggle');
