@@ -533,6 +533,70 @@ form button:hover {
 .banderas{
   border-bottom: #ccc 1px solid;
 }
+.cards-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.cards-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #0077cc;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  padding: 5px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h3 {
+  margin: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsivo */
+@media (min-width: 600px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    
+  }
+  .card img {
+  width: 25%;
+  height: auto;
+  display: block;
+}
+}
+
     </style>
 </head>
 <body>
@@ -681,7 +745,7 @@ México
         </div>
         </div>
     </section>
-    <section id="therapeutic" class="container-therapeutic">
+    <section id="therapeutic" class="container-therapeutic cards-section">
         <div id="" class="">
             <h3>Líneas terapéuticas</h3>
         </div>
@@ -703,7 +767,7 @@ México
     </div>
     <button class="nav next">&#10095;</button>
   </div> -->
-        <div class="iconos">
+     <!--   <div class="iconos">
           <div class="lineas">
             <img src="ICONOS/CARDIOLOGÍA.png" alt="" srcset="">
             <span>CARDIOLOGÍA</span>
@@ -732,10 +796,49 @@ México
             <img src="ICONOS/METABOLISMO Y DIGESTIVO.png" alt="" srcset="">
             <span>METABOLISMO Y DIGESTIVO</span>
           </div>
-        </div>
+        </div>-->
 
   <div class="dots"></div>
 
+ <h2>Nuestros Servicios</h2>
+  <div class="cards-container">
+    <div class="card">
+      <img src="ICONOS/ANTIINFECCIOSA.png" alt="Card 1">
+      <h3>ANTIINFECCIOSA</h3>
+    </div>
+    <div class="card">
+      <img src="ICONOS/CARDIOLOGÍA.png" alt="Card 2">
+      <h3>CARDIOLOGÍA</h3>
+    </div>
+    <div class="card">
+      <img src="ICONOS/CORTICOSTEROIDES.png" alt="Card 3">
+      <h3>CORTICOSTEROIDES</h3>
+    </div>
+    <div class="card">
+      <img src="ICONOS/METABOLISMO Y DIGESTIVO.png" alt="Card 4">
+      <h3>METABOLISMO Y DIGESTIVO</h3>
+    </div>
+    <div class="card">
+      <img src="ICONOS/SISTEMA NERVIOSO CENTRAL.png" alt="Card 5">
+      <h3>SISTEMA NERVIOSO CENTRA</h3>
+    </div>
+    <div class="card">
+      <img src="ICONOS/INMUNOSUPRESIÓN TRASPLANTES.png" alt="Card 6">
+      <h3>INMUNOSUPRESIÓN TRASPLANTES</h3>
+    </div>
+    <div class="card">
+      <img src="ICONOS/DOLOR.png" alt="Card 7">
+      <h3>DOLOR</h3>
+    </div>
+    <div class="card">
+      <img src="ICONOS/cÁncer.png" alt="Card 8">
+      <h3>CÁNCER</h3>
+    </div>
+    <div class="card">
+      <img src="ICONOS/SISTEMA RESPIRATORIO.png" alt="Card 9">
+      <h3>SISTEMA RESPIRATORIO</h3>
+    </div>
+  </div>
     </section>
     <section id="oppurtunites" class="container-oppurtunites">
         <div id="" class="content">
